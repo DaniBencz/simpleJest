@@ -16,8 +16,7 @@ TypeScript type info: npm install @types/jest
 fetchAPI for node: (npm cross-fetch)
 set up setupTests.js with:
 global.fetch = require('cross-fetch')
-to use it for every test
-configure jest in package.json accordingly
+to use it for every test, configure jest in package.json accordingly
 
 install @babel/node to be able to run ES6 syntax
 invoke .js files with: npx babel-node my.js
