@@ -11,9 +11,9 @@ or config package.json: --watcAll sets hot reload
 
 TypeScript type info: npm install @types/jest
 
-'liveServer': (npm http-server)
+'liveServer': npx http-server
 
-fetchAPI for node: (npm cross-fetch)
+fetchAPI for node: npm cross-fetch
 set up setupTests.js with:
 global.fetch = require('cross-fetch')
 to use it for every test, configure jest in package.json accordingly
@@ -56,5 +56,3 @@ test('what should...', () => {
 
 test.only(): run only this test in this test file
 test.skip()
-
-
