@@ -1,0 +1,61 @@
+
+https://github.com/green-fox-academy/react-advanced/tree/master/workshop/jest
+
+in node only, import won't work
+use require or babel
+npm install @babel/core @babel/preset-env
+config babel.config.js
+
+run: npx jest
+or config package.json: --watcAll sets hot reload
+
+TypeScript type info: npm install @types/jest
+
+'liveServer': (npm http-server)
+
+fetchAPI for node: (npm cross-fetch)
+set up setupTests.js with:
+global.fetch = require('cross-fetch')
+to use it for every test
+configure jest in package.json accordingly
+
+install @babel/node to be able to run ES6 syntax
+invoke .js files with: npx babel-node my.js
+
+mocking fetch: global.fetch = jest.fn()
+
+jest.fn().mockReturnValue({
+  then: jest.fn()
+})
+
+jest.fn().mockResolvedValue({
+  json: jest.fn().mockResolvedValue(myMockVariable) //json returns with promise too
+})
+
+jest.mock('./my.js', () => {
+  return {
+    // mock some stuff
+  }
+})
+
+if done parameter provided: test only stops when hits done()
+or use async await!
+
+describe('what' () => {
+  it('should...', () => {
+    //Arrange
+    //Act
+    //Assert
+  })
+})
+
+or
+
+test('what should...', () => {
+  // test here
+})
+
+test.only(): run only this test in this test file
+test.skip()
+
+
