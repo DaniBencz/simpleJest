@@ -1,15 +1,18 @@
 'use strict'
 
-// global.fetch = require('cross-fetch');
-
 export default class SwAPI {
-  
+
+  // instead of manipulating the global.fetch, decide in the constructor, which one to use
+  constructor(customFetch){
+    this.myfetch = customFetch
+  }
+
   getPerson(id) {
     if (!id) {
       throw new Error('id must be a positive number');
     }
 
-    return fetch(`https://swapi.co/api/people/${id}`)
+    return this.myfetch(`https://swapi.co/api/people/${id}`)
       .then(response => response.json())
       .then(res => {
         console.log(res)
@@ -18,7 +21,7 @@ export default class SwAPI {
   }
 
   getPeople() {
-    return fetch(`https://swapi.co/api/people`)
+    return this.myfetch(`https://swapi.co/api/people`)
       .then(response => response.json())
   }
 }

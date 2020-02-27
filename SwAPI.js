@@ -2,5 +2,7 @@
 
 import SwAPI from './SwAPIclass'
 
-let api = new SwAPI()
+global.fetch = require('cross-fetch');
+
+let api = new SwAPI(fetch)
 console.log(api.getPerson(1))

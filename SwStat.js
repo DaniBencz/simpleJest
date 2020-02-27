@@ -3,8 +3,9 @@
 import SwAPI from './SwAPIclass'
 
 export default class SwStat {
-  constructor() {
-    this.swAPI = new SwAPI()
+  
+  constructor(customFetch) {
+    this.swAPI = new SwAPI(customFetch)
   }
 
   async count() {
